@@ -1,0 +1,75 @@
+% Created 2020-05-15 五 11:52
+% Intended LaTeX compiler: pdflatex
+\documentclass[acmtog]{acmart}
+
+
+\usepackage{siggraph}
+\date{\today}
+\title{A Multifrequency MAC Specially Designed for Wireless Sensor Network Applications}
+\hypersetup{
+ pdfauthor={},
+ pdftitle={A Multifrequency MAC Specially Designed for Wireless Sensor Network Applications},
+ pdfkeywords={},
+ pdfsubject={},
+ pdfcreator={Emacs 26.3 (Org mode 9.3.6)}, 
+ pdflang={English}}
+\begin{document}
+
+\maketitle
+\begin{abstract}
+Multifrequency media access control\ldots{}
+\end{abstract}
+\section{introduction}
+\label{sec:orgd994049}
+\section{mmsn protocol}
+\label{sec:orgaa1e2ba}
+\subsection{Frequency Assignment}
+\label{sec:orge87b329}
+A natural candidate is an increasing geometric sequence, in which
+\begin{equation}
+P(t)=\frac{b^{\frac{t+1}{T+1}}-b^{\frac{t}{T+1}}}{b-1}
+\end{equation}
+where \(t = 0,...,T\), and \(b\) is a number greater than 1.\\
+\begin{algorithm}[t]
+\SetAlgoNoLine
+\KwIn{Node $\alpha$'s ID ($ID_{\alpha}$), and node $\alpha$'s
+neighbors' IDs within two communication hops.}
+\KwOut{The frequency number ($FreNum_{\alpha}$) node $\alpha$ gets assigned.}
+$index$ = 0; $FreNum_{\alpha}$ = -1\;
+\Repeat{$FreNum_{\alpha} > -1$}{
+        $Rnd_{\alpha}$ = Random($ID_{\alpha}$, $index$)\;
+        $Found$ = $TRUE$\;
+        \For{each node $\beta$ in $\alpha$'s two communication hops
+    }{
+      $Rnd_{\beta}$ = Random($ID_{\beta}$, $index$)\;
+      \If{($Rnd_{\alpha} < Rnd_{\beta}$) \text{or} ($Rnd_{\alpha}$ ==
+          $Rnd_{\beta}$ \text{and} $ID_{\alpha} < ID_{\beta}$)\;
+      }{
+        $Found$ = $FALSE$; break\;
+      }
+        }
+     \eIf{$Found$}{
+           $FreNum_{\alpha}$ = $index$\;
+         }{
+           $index$ ++\;
+     }
+      }
+\caption{Frequency Number Computation}
+\label{alg:one}
+\end{algorithm}
+\subsubsection{Exclusive Frequency Assignment.}
+\label{sec:org1b01dc8}
+In exclusive frequency\ldots{}
+\section{simulator}
+\label{sec:org5024f57}
+If the model checker requests \ldots{}
+
+\begin{center}
+\begin{tabular}{lrr}
+Name & Phone & Age\\
+\hline
+Peter & 1234 & 17\\
+Anna & 4321 & 25\\
+\end{tabular}
+\end{center}
+\end{document}
